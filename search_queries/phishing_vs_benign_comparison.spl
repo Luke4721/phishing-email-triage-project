@@ -1,0 +1,4 @@
+| inputlookup cleaned_emails.csv
+| stats count by label
+| eval label=if(label==0, "Phishing", "Benign")
+| fields - _key

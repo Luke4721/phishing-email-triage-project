@@ -1,0 +1,5 @@
+| inputlookup cleaned_emails.csv
+| search label=0
+| stats count by sender
+| sort - count
+| head 20

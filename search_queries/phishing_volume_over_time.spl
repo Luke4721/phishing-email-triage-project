@@ -1,0 +1,4 @@
+| inputlookup cleaned_emails.csv
+| eval _time = strptime(date, "%a, %d %b %Y %H:%M:%S %z")
+| timechart span=1d count by label useother=f
+| rename 1 as "Benign Emails" 0 as "Phishing Emails"

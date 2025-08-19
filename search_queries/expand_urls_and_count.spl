@@ -1,0 +1,4 @@
+| inputlookup cleaned_emails.csv
+| mvexpand urls
+| stats count as url_count by urls
+| sort - url_count
